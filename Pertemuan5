@@ -1,0 +1,95 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package JavaString;
+
+/**
+ *
+ * @author orgyy
+ */
+public class javaString {
+    public static void main(String[] args) {
+        // Membuat objek dari class Person
+        Person person1 = new Person("Irgi", 25);
+        Person person2 = new Person("Alyansa"); // Menggunakan default constructor
+
+        // Mengakses anggota objek
+        System.out.println("Name: " + person1.getName());
+        System.out.println("Age: " + person1.getAge());
+
+        // Menggunakan overloading constructor
+        Person person3 = new Person("Irgi", 27, "Bandung");
+        System.out.println("Name: " + person3.getName());
+        System.out.println("Age: " + person3.getAge());
+        System.out.println("City: " + person3.getCity());
+
+        // Menggunakan this keyword
+        Person person4 = new Person("Irgi", 30);
+        person4.setDetails("Irgi", 30);
+        System.out.println("Name: " + person4.getName());
+        System.out.println("Age: " + person4.getAge());
+
+        // Literal string
+        String str1 = "Hello, World!";
+        System.out.println(str1);
+
+        // Membuat objek String
+        String str2 = new String("Welcome to Java");
+        System.out.println(str2);
+
+        // String vs StringBuffer
+        StringBuffer sb = new StringBuffer("StringBuffer ");
+        sb.append("is mutable");
+        System.out.println(sb);
+
+        String str3 = "String ";
+        String str4 = str3 + "is immutable";
+        System.out.println(str4);
+    }
+}
+
+class Person {
+    private String name;
+    private int age;
+    private String city;
+
+    // Default Constructor
+    public Person(String name) {
+        this.name = name;
+        this.age = 0;
+        this.city = "Unknown";
+    }
+
+    // Overloading Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+        this.city = "Unknown";
+    }
+
+    // Overloading Constructor
+    public Person(String name, int age, String city) {
+        this.name = name;
+        this.age = age;
+        this.city = city;
+    }
+
+    // This keyword
+    public void setDetails(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getCity() {
+        return city;
+    }
+}
